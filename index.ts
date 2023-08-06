@@ -2,7 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 import { Sequelize } from "sequelize-typescript";
 import dotenv from "dotenv";
-// import { User } from "./model/User";
 
 dotenv.config();
 
@@ -24,7 +23,7 @@ const sequelize = new Sequelize(
   }
 );
 
-// sequelize.addModels([User]);
+sequelize.addModels([__dirname + "./model/"]);
 
 // Sync the database
 (async () => {
