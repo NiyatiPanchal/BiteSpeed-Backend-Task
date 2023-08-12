@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { Sequelize } from "sequelize-typescript";
+import "reflect-metadata";
 import dotenv from "dotenv";
 import { identify } from "./controllers/identify";
 import { sequelize } from "./db";
@@ -19,8 +19,12 @@ app.post("/identify", identify);
 
 // Sync the database
 (async () => {
-  await sequelize.sync({ force: false });
-  console.log("Database synced!");
+  try {
+    await sequelize.sync({ force: false });
+    console.log("Database synced!");
+  } catch (error) {
+    console.log(error);
+  }
 })();
 
 app.listen(PORT, () => {
