@@ -2,6 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import { Sequelize } from "sequelize-typescript";
 import dotenv from "dotenv";
+import { identify } from "./controllers/identify";
+import { sequelize } from "./db";
 
 dotenv.config();
 
@@ -12,22 +14,12 @@ const PORT = 5000;
 app.use(express.json());
 app.use(bodyParser.json());
 
-// Initialize Sequelize
-const sequelize = new Sequelize(
-  process.env.MYSQLDB!,
-  process.env.DB_USER!,
-  process.env.DB_PASSWORD!,
-  {
-    dialect: "mysql",
-    host: process.env.DB_HOST,
-  }
-);
-
-sequelize.addModels([__dirname + "./model/"]);
+// Available Routes
+app.post("/identify", identify);
 
 // Sync the database
 (async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
   console.log("Database synced!");
 })();
 
