@@ -26,7 +26,7 @@ The backend is developed using the following technologies and frameworks:
 - **`Node.js`** : A runtime environment that allows us to run JavaScript on the server side.
 - **`Express.js`** : A popular web application framework for building APIs and web applications.
 - **`TypeScript`** : A superset of JavaScript that adds static types and other features to enhance code quality and maintainability.
-- **`Sequelize`** : A promise-based ORM (Object-Relational Mapping) for Node.js that allows us to interact with the MySQL database using TypeScript.
+- **`Sequelize`** : A promise-based ORM (Object-Relational Mapping) for Node.js that allows us to interact with the SQL database using TypeScript.
 
 # Database Schema
 
