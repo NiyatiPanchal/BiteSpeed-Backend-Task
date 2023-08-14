@@ -34,16 +34,16 @@ The MySQL database schema includes the following tables:
 
 **`Users`** : Stores user registration information.
 
-    ```yml
-    id (Primary Key, Auto Increment)
-    phoneNumber
-    email
-    linkedId
-    linkPrecedence
-    createdAt
-    updatedAt
-    deletedAt
-    ```
+```yml
+id (Primary Key, Auto Increment)
+phoneNumber
+email
+linkedId
+linkPrecedence
+createdAt
+updatedAt
+deletedAt
+```
 
 # Setup Instructions
 
